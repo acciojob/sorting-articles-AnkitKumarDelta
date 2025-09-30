@@ -10,7 +10,7 @@
     <script>
 		const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
         let ul = document.createElement("ul");
-		ul.id="band"
+		ul.id="bands"
         let ans = [];
 
 for(let i of bands){
@@ -34,6 +34,7 @@ for(let i=0;i<ans.length;i++){
 	for(let j=0;j<bands.length;j++){
 		if(bands[j].includes(ans[i])){
 			let li = document.createElement("li");
+			li.id="band";
             li.innerText = bands[j];
             ul.append(li);
 			break;
