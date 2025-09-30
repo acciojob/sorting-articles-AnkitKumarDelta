@@ -8,8 +8,40 @@
 
 <body>
 	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <script>
+		const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+let div = document.createElement("div");
+let ans = [];
+
+for(let i of bands){
+	if(i.slice(0,2)=='A '){
+		i = i.slice(2,i.length);
+	} 
+	if(i.slice(0,3)=='An '){
+		i = i.slice(3,i.length);
+	}
+	if(i.slice(0,4)=='The '){
+		i = i.slice(4,i.length);
+	}
+	ans.push(i.trim());
+}
+
+ans = ans.sort((a,b)=>{
+  return a.localeCompare(b);
+});
+
+for(let i=0;i<ans.length;i++){
+	for(let j=0;j<bands.length;j++){
+		if(bands[j].includes(ans[i])){
+			let p = document.createElement("p");
+            p.innerText = bands[j];
+            div.append(p);
+			break;
+		}
+	}
+}
+document.body.append(div);
+	</script>
 
 </body>
 
