@@ -7,11 +7,11 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
     <script>
 		const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
-let div = document.createElement("div");
-let ans = [];
+        let ul = document.createElement("ul");
+		ul.id="band"
+        let ans = [];
 
 for(let i of bands){
 	if(i.slice(0,2)=='A '){
@@ -33,14 +33,14 @@ ans = ans.sort((a,b)=>{
 for(let i=0;i<ans.length;i++){
 	for(let j=0;j<bands.length;j++){
 		if(bands[j].includes(ans[i])){
-			let p = document.createElement("p");
-            p.innerText = bands[j];
-            div.append(p);
+			let li = document.createElement("li");
+            li.innerText = bands[j];
+            ul.append(li);
 			break;
 		}
 	}
 }
-document.body.append(div);
+document.body.append(ul);
 	</script>
 
 </body>
